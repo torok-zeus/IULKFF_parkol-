@@ -143,8 +143,10 @@ class ParkingGUI_FÁ:
         eltelt_mp = eltelt.total_seconds()
         eltelt_ora = int(eltelt_mp / 3600)
         eltelt_perc = int((eltelt_mp % 3600) / 60)
-
-        fizetendo = (eltelt_ora+1) * 500
+        if eltelt_perc >  0:
+            fizetendo = (eltelt_ora+1) * 500
+        else:
+            fizetendo = eltelt_ora*500
 
         fizeto_ablak = tk.Toplevel(self.root)
         fizeto_ablak.title("Fizetés")

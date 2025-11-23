@@ -25,50 +25,106 @@ közvetlenül hívható: AdatokSQL.load_all()
 
 Modulok:
 Adatmento_FÁ
+
   -adatbázis létrehozása
+  
   -adatok betöltése
+  
   -adatok mentése
+  
   -hiányzó rekordok automatikus létrehozása
+  
 datetime
+
+  -Idő számitáshoz használt
+  
 tkinter
+   -grafikai elemekhez használt
+   
 Függvények:
+
 def __init__
+
   -ablak létrehozása
+  
   -adatbázis inicializálás
+  
   -adatok betöltése SQL-ből
+  
   -UI két részre osztása
+  
   -gombok és vezérlőpanel létrehozása
+  
 def create_parking_buttons_FÁ
+  
      -10 db parkolóhely gomb generálása
+     
      -gomb színe → adatok alapján
+     
      -gombhoz kattintási esemény hozzáadása
+
 def select_spot_FÁ
+
   eltárolja a kiválasztott parkolóhelyet
+  
   frissíti a jobb oldali info panelt
+  
   ha foglalt → rendszámot beírja a mezőbe
+
 def create_control_panel_FÁ
+
     jobb oldali UI kialakítása:
+    
     kiválasztott hely kiírása
+    
     rendszám mező
+    
     parkolás és távozás gombok
+
 def occupy_spot_FÁ
+
 ellenőrzések:
+
       kiválasztott-e hely?
+      
       szabad-e?
+      
       van-e rendszám?
+      
       foglalás indítása
+      
       SQL mentés
+      
       UI frissítése (piros gomb)
+
 def free_spot_FÁ
+
 ellenőrzések:
+
     kiválasztott hely
+    
     van-e kezdési idő → foglalt-e?
+    
     parkolás időtartam számítása
+    
     fizetési ablak létrehozása
+    
     fizetés gomb logikája: visszaállítás + SQL mentés
+
 def fizetes_gomb
+
+    Fizzetés ablak van definiálva vele
+    
 def init_db
+
+ 
 def load_all
+
+    parkolóhelyek betöltése az sqlből
+    
+
 def save_spot
+
+    Parkolóhelyek elmentése az sqlbe
 
 

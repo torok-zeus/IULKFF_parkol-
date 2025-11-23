@@ -8,6 +8,7 @@ A program célja:
 Használt osztály:
 ParkingGUI_FÁ
  -teljes Tkinter felület
+ 
  -gombok, mezők
  -parkolás és távozás
  -fizetési ablak

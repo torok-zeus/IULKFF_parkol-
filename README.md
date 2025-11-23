@@ -6,14 +6,21 @@ A program célja:
 - az állapotok tartós mentése SQLite adatbázisba
   
 Használt osztály:
+
 ParkingGUI_FÁ
+
  -teljes Tkinter felület
  
  -gombok, mezők
+ 
  -parkolás és távozás
+ 
  -fizetési ablak
+ 
  -adatok mentése SQL-be
+ 
 AdatokSQL_FÁ
+
 közvetlenül hívható: AdatokSQL.load_all()
 
 Modulok:

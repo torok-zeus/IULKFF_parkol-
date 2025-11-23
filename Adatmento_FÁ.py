@@ -2,7 +2,7 @@ import sqlite3
 
 AUTO_FILE = "parkolo_autok.db"
 
-class AdatokSQL:
+class AdatokSQL_FÁ:
     @staticmethod
     def init_db():
         conn = sqlite3.connect(AUTO_FILE)

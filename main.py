@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from Adatmento_FÁ import AdatokSQL
+from Adatmento_FÁ import AdatokSQL_FÁ
 from datetime import datetime
 
 class ParkingGUI_FÁ:
@@ -8,13 +8,13 @@ class ParkingGUI_FÁ:
         self.root = root
         self.root.title("Parkolóhely Nyilvántartó – app")
         self.root.geometry("900x500")
-        AdatokSQL.init_db()
+        AdatokSQL_FÁ.init_db()
         self.left_frame = tk.Frame(self.root)
         self.left_frame.pack(side="left", padx=20, pady=20)
         self.right_frame = tk.Frame(self.root)
         self.right_frame.pack(side="right", padx=20, pady=20, fill="y")
         self.selected_spot = None
-        loaded = AdatokSQL.load_all()
+        loaded = AdatokSQL_FÁ.load_all()
         self.spots = loaded if loaded else {}
         self.create_parking_buttons_FÁ()
         self.create_control_panel_FÁ()
@@ -29,7 +29,7 @@ class ParkingGUI_FÁ:
 
             if spot_id not in self.spots:
                 self.spots[spot_id] = {"foglalt": "szabad", "rendszám": "","kezdes": ""}
-                AdatokSQL.save_spot(spot_id, "szabad", "","")
+                AdatokSQL_FÁ.save_spot(spot_id, "szabad", "","")
 
             foglalt_flag = self.spots[spot_id]["foglalt"] == "foglalt"
 
@@ -115,7 +115,7 @@ class ParkingGUI_FÁ:
 
         data["button"].config(bg="red")
 
-        AdatokSQL.save_spot(self.selected_spot, "foglalt", plate,kezdes)
+        AdatokSQL_FÁ.save_spot(self.selected_spot, "foglalt", plate,kezdes)
 
         messagebox.showinfo(
             "Parkolás elindítva",
@@ -168,7 +168,7 @@ class ParkingGUI_FÁ:
             data["button"].config(bg="green")
             self.entry_plate.delete(0, tk.END)
 
-            AdatokSQL.save_spot(self.selected_spot, "szabad", "", "")
+            AdatokSQL_FÁ.save_spot(self.selected_spot, "szabad", "", "")
 
             fizeto_ablak.destroy()
 

@@ -4,6 +4,7 @@ A program célja:
 - rendszám megadása és parkolás indítása
 - távozáskor a parkolási díj automatikus kiszámítása
 - az állapotok tartós mentése SQLite adatbázisba
+  
 Használt osztály:
 ParkingGUI_FÁ
  -teljes Tkinter felület
